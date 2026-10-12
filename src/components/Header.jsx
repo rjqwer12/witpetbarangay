@@ -1,0 +1,4 @@
+import { HeartPulse, UserRound, LayoutDashboard } from 'lucide-react';
+export default function Header({ role, onRoleChange }) {
+  return <header><div className="header-inner"><a className="brand" href="#" onClick={e => { e.preventDefault(); onRoleChange('resident'); }}><span className="brand-icon"><HeartPulse size={25} /></span><span>Barangay Health<span className="brand-sub">APPOINTMENT SYSTEM</span></span></a><nav aria-label="Select demo role" className="role-switch"><button className={role === 'resident' ? 'active' : ''} aria-pressed={role === 'resident'} onClick={() => onRoleChange('resident')}><UserRound size={16} /> Resident view</button><button className={role === 'staff' ? 'active' : ''} aria-pressed={role === 'staff'} onClick={() => onRoleChange('staff')}><LayoutDashboard size={16} /> Staff dashboard</button></nav><span className="demo-label"><i /> Prototype mode</span></div></header>;
+}
